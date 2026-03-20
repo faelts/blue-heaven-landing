@@ -1,71 +1,48 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blue Heaven | O Extraordinário é o nosso padrão</title>
-    
+    <title>Blue Heaven | Incorporadora de Luxo</title>
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Inter:wght@200;300;400&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
     <style type="text/tailwindcss">
-        @theme {
-            --font-serif: "Cormorant Garamond", serif;
-            --font-sans: "Inter", sans-serif;
-            --color-gold: #C5A059;
-        }
-        body { @apply bg-[#080808] text-white font-sans antialiased overflow-x-hidden; }
-        .reveal { opacity: 0; transform: translateY(40px); }
-        .vignette { box-shadow: inset 0 0 150px rgba(0,0,0,0.9); }
+        @theme { --font-serif: "Cormorant Garamond", serif; --color-gold: #C5A059; }
+        body { @apply bg-[#080808] text-white antialiased; }
+        .reveal { opacity: 0; transform: translateY(30px); }
     </style>
 </head>
 <body>
-
-    <header class="fixed top-0 w-full z-50 px-10 py-8 flex justify-between items-center bg-transparent transition-all duration-700" id="main-header">
-        <h1 class="text-2xl font-serif tracking-[0.3em] uppercase italic font-light">Blue Heaven</h1>
-        <nav class="hidden lg:flex gap-16 text-[9px] uppercase tracking-[0.4em] opacity-50">
-            <a href="#home" class="hover:text-gold hover:opacity-100 transition">Início</a>
-            <a href="#manifesto" class="hover:text-gold hover:opacity-100 transition">O Extraordinário</a>
-            <a href="#projetos" class="hover:text-gold hover:opacity-100 transition">Empreendimentos</a>
-            <a href="#contato" class="hover:text-gold hover:opacity-100 transition">Contato</a>
+    <header class="fixed top-0 w-full z-50 p-8 flex justify-between items-center bg-black/80 backdrop-blur-md">
+        <h1 class="text-xl font-serif tracking-[0.3em] uppercase italic">Blue Heaven</h1>
+        <nav class="hidden md:flex gap-10 text-[10px] uppercase tracking-[0.4em] opacity-60">
+            <a href="#home">Início</a><a href="#projetos">Projetos</a><a href="#contato">Contato</a>
         </nav>
-        <div class="w-8 h-[1px] bg-white/40"></div> </header>
+    </header>
 
     <main>
-        <section id="home" class="h-screen relative flex items-center justify-center overflow-hidden">
-            <div class="absolute inset-0 z-0">
-                <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=2500" 
-                     class="w-full h-full object-cover opacity-50 scale-110" id="hero-bg">
-            </div>
-            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-transparent to-black/40"></div>
-            
-            <div class="z-10 text-center px-4 mt-20">
-                <h2 class="hero-title text-5xl md:text-[110px] font-serif leading-none font-light mb-4">
-                    Vida em <span class="italic text-gold">Sinfonia</span>
-                </h2>
-                <div class="w-20 h-[1px] bg-gold mx-auto mb-8 opacity-50"></div>
-                <p class="hero-subtitle text-[10px] uppercase tracking-[1.2em] opacity-40">Balneário Camboriú</p>
-            </div>
-
-            <div class="absolute bottom-12 left-1/2 -translate-x-1/2 opacity-20 text-[8px] uppercase tracking-[0.5em] animate-bounce">
-                Scroll para descobrir
+        <section id="home" class="h-screen relative flex items-center justify-center">
+            <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=2500" class="absolute inset-0 w-full h-full object-cover opacity-50">
+            <div class="z-10 text-center px-4">
+                <h2 class="text-6xl md:text-9xl font-serif leading-none mb-4 reveal">Vida em <span class="italic text-gold">Sinfonia</span></h2>
             </div>
         </section>
 
-        <section id="manifesto" class="py-40 px-8 max-w-6xl mx-auto flex flex-col items-center">
-            <span class="reveal text-gold text-[9px] uppercase tracking-[0.6em] mb-12 italic">Manifesto</span>
-            <h3 class="reveal text-3xl md:text-5xl font-serif font-light text-center leading-relaxed italic opacity-90">
-                "Onde a <span class="text-gold">Biofilia</span> abraça a <br class="hidden md:block"> arquitetura de luxo, criando <br class="hidden md:block"> santuários suspensos entre o <br class="hidden md:block"> mar e o céu."
-            </h3>
-            <div class="reveal w-px h-32 bg-white/10 mt-20"></div>
+        <section id="projetos" class="py-40 px-10 bg-[#0a0a0a]">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20">
+                <div class="reveal"><img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800" class="border border-white/10 opacity-70 hover:opacity-100 transition"></div>
+                <div class="reveal pt-20"><h3 class="text-4xl font-serif italic mb-6">Infinitá Treehouse</h3><p class="opacity-40 text-sm tracking-widest uppercase">Design Biofílico | Praia Brava</p></div>
+            </div>
         </section>
+    </main>
 
-        <section id="projetos" class="py-20 px-10">
-            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-20 items-center">
-                
-                <div class="md:col-span-7 reveal relative group overflow-hidden">
-                    <p class="text-[8px] uppercase tracking-[0.5em] text-gold mb-6">Em Destaque</p>
-                    <div class="aspect-video overflow-hidden border border-white/5">
-                        <img src="
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.utils.toArray(".reveal").forEach(el => {
+            gsap.to(el, { scrollTrigger: el, opacity: 1, y: 0, duration: 1.5, ease: "power4.out" });
+        });
+    </script>
+</body>
+</html>
