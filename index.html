@@ -1,34 +1,66 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blue Heaven | Incorporadora</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Extraordinário em sua forma Soberana | Construtora Blue Heaven</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-
+    
     <style type="text/tailwindcss">
-      @theme {
-        --font-serif: "Cormorant Garamond", serif;
-        --font-sans: "Inter", sans-serif;
-        --color-gold: #C5A059;
-        --color-black-pure: #000000;
-      }
-      
-      body {
-        background-color: black;
-        color: white;
-        margin: 0;
-        padding: 0;
-      }
+        @theme {
+            --font-serif: "Cormorant Garamond", serif;
+            --font-sans: "Inter", sans-serif;
+            --color-gold-champion: #C5A059;
+            --color-deep-black: #000000;
+        }
+        body {
+            @apply bg-deep-black text-white antialiased overflow-x-hidden font-sans;
+        }
     </style>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+</head>
+<body>
+    <header class="fixed top-0 w-full z-50 bg-deep-black/80 backdrop-blur-sm border-b border-white/10">
+        <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <h1 class="text-3xl font-serif text-white uppercase tracking-wider">Blue Heaven</h1>
+            <div class="flex items-center gap-6 text-sm text-white/80 tracking-wide">
+                <a href="#" class="hover:text-white transition-colors">Empreendimentos</a>
+                <a href="#" class="hover:text-white transition-colors">Sobre</a>
+                <a href="#" class="border border-white/30 px-4 py-1.5 hover:border-white transition-all">Contato</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="min-h-screen flex items-center justify-center relative pt-20">
+            <img src="https://images.unsplash.com/photo-1613545325278-f24b0cae1224?q=80&w=2000" 
+                 alt="Luxury treehouse modern architecture"
+                 class="absolute inset-0 w-full h-full object-cover vignette opacity-60">
+            <div class="absolute inset-0 bg-deep-black/60"></div>
+            
+            <div class="z-10 text-center max-w-4xl px-6">
+                <h2 class="text-6xl md:text-8xl font-serif text-white leading-tight mb-12">
+                    <span class="italic text-gold-champion">Sinfonia</span><br>em sua essência<br>Arquitetônica
+                </h2>
+                <a href="#" class="inline-block border-b-2 border-gold-champion pb-1 text-gold-champion uppercase tracking-widest text-sm hover:border-white hover:text-white transition-all">
+                    Descubra o Infinitá Treehouse
+                </a>
+            </div>
+        </section>
+        
+        <section class="max-w-7xl mx-auto px-6 py-24">
+            <p class="text-center text-white/60 tracking-wider text-lg">O Extraordinário em sua forma Soberana. Construtora Blue Heaven.</p>
+        </section>
+    </main>
+
+    <footer class="bg-deep-black border-t border-white/10 py-12 px-6">
+        <div class="max-w-7xl mx-auto text-center text-white/40 text-sm tracking-wide">
+            © 2026 Construtora Blue Heaven. A Soberania do Viver.
+        </div>
+    </footer>
+</body>
 </html>
