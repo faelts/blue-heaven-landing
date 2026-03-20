@@ -3,37 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blue Heaven | A Soberania do Viver</title>
+    <title>O Extraordinário em sua forma Soberana | Construtora Blue Heaven</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
     <style type="text/tailwindcss">
         @theme { --font-serif: "Cormorant Garamond", serif; --color-gold: #C5A059; }
-        body { @apply bg-black text-white font-sans antialiased; }
+        body { @apply bg-black text-white antialiased font-sans; }
+        .hero-title span { display: inline-block; }
     </style>
 </head>
 <body>
-    <nav class="fixed w-full z-50 p-6 flex justify-between items-center bg-black/50 backdrop-blur-md">
-        <h1 class="text-2xl font-serif tracking-widest uppercase">Blue Heaven</h1>
-        <div class="hidden md:flex space-x-8 text-[10px] uppercase tracking-[0.3em] opacity-70">
+    <header class="fixed top-0 w-full z-50 p-6 flex items-center justify-between bg-black/50 backdrop-blur-md opacity-0" id="header">
+        <h1 class="text-3xl font-serif text-whiteuppercase tracking-widest">Blue Heaven</h1>
+        <div class="flex items-center gap-6 text-sm opacity-80">
             <a href="#" class="hover:text-gold transition">Empreendimentos</a>
-            <a href="#" class="hover:text-gold transition">Conceito</a>
-            <a href="#" class="border border-white/20 px-4 py-2 hover:bg-white hover:text-black transition">Contato</a>
+            <a href="#" class="hover:text-gold transition">Sobre</a>
+            <a href="#" class="border border-white/30 px-4 py-2 hover:bg-white hover:text-black transition">Contato</a>
         </div>
-    </nav>
+    </header>
 
-    <section class="h-screen flex items-center justify-center relative overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1613545325278-f24b0cae1224?q=80&w=2000" class="absolute inset-0 w-full h-full object-cover opacity-50">
-        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/60"></div>
-        
-        <div class="z-10 text-center px-6">
-            <h2 class="text-6xl md:text-9xl font-serif leading-tight mb-8">
-                Arquitetura em<br><span class="italic text-gold">Sinfonia</span>
-            </h2>
-            <p class="tracking-[0.6em] uppercase text-xs opacity-60 mb-12">Balneário Camboriú | Santa Catarina</p>
-            <button class="text-gold border-b border-gold/40 pb-2 uppercase tracking-widest text-[10px] hover:text-white hover:border-white transition-all">
-                Conhecer o Infinitá Treehouse
-            </button>
-        </div>
-    </section>
+    <main>
+        <section class="min-h-screen flex items-center justify-center relative pt-20 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=2000" class="absolute inset-0 w-full h-full object-cover vignette opacity-60 scale-105" id="hero-img">
+            
+            <div class="z-10 text-center px-6">
+                <h2 class="hero-title text-7xl md:text-9xl font-serif leading-tight mb-8">
+                    <span>Sinfonia</span><br>em sua<br><span>essência</span>
+                </h2>
+                <p class="tracking-[0.6em] uppercase text-xs opacity-60" id="hero-subtitle italic text-gold">A Soberania do Viver.</p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        gsap.registerPlugin();
+        let tl = gsap.timeline();
+
+        // Animação de entrada: mais suave impossível
+        tl.to("#hero-img", { duration: 2, scale: 1, ease: "power2.out" })
+          .to("#header", { duration: 1, opacity: 1, ease: "power1.inOut" }, "-=1.5")
+          .from(".hero-title span", { duration: 1.5, y: 100, opacity: 0, stagger: 0.3, ease: "expo.out" }, "-=1")
+          .from("#hero-subtitle", { duration: 1, opacity: 0, y: 30, ease: "power2.out" }, "-=0.5");
+    </script>
 </body>
 </html>
