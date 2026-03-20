@@ -3,54 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O Extraordinário em sua forma Soberana | Construtora Blue Heaven</title>
+    <title>Blue Heaven | O Extraordinário é o nosso padrão</title>
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Inter:wght@200;300;400&display=swap" rel="stylesheet">
 
     <style type="text/tailwindcss">
-        @theme { --font-serif: "Cormorant Garamond", serif; --color-gold: #C5A059; }
-        body { @apply bg-black text-white antialiased font-sans; }
-        .hero-title span { display: inline-block; }
+        @theme {
+            --font-serif: "Cormorant Garamond", serif;
+            --font-sans: "Inter", sans-serif;
+            --color-gold: #C5A059;
+        }
+        body { @apply bg-[#080808] text-white font-sans antialiased overflow-x-hidden; }
+        .reveal { opacity: 0; transform: translateY(40px); }
+        .vignette { box-shadow: inset 0 0 150px rgba(0,0,0,0.9); }
     </style>
 </head>
 <body>
-    <header class="fixed top-0 w-full z-50 p-6 flex items-center justify-between bg-black/50 backdrop-blur-md opacity-0" id="header">
-        <h1 class="text-3xl font-serif text-whiteuppercase tracking-widest">Blue Heaven</h1>
-        <div class="flex items-center gap-6 text-sm opacity-80">
-            <a href="#" class="hover:text-gold transition">Empreendimentos</a>
-            <a href="#" class="hover:text-gold transition">Sobre</a>
-            <a href="#" class="border border-white/30 px-4 py-2 hover:bg-white hover:text-black transition">Contato</a>
-        </div>
-    </header>
+
+    <header class="fixed top-0 w-full z-50 px-10 py-8 flex justify-between items-center bg-transparent transition-all duration-700" id="main-header">
+        <h1 class="text-2xl font-serif tracking-[0.3em] uppercase italic font-light">Blue Heaven</h1>
+        <nav class="hidden lg:flex gap-16 text-[9px] uppercase tracking-[0.4em] opacity-50">
+            <a href="#home" class="hover:text-gold hover:opacity-100 transition">Início</a>
+            <a href="#manifesto" class="hover:text-gold hover:opacity-100 transition">O Extraordinário</a>
+            <a href="#projetos" class="hover:text-gold hover:opacity-100 transition">Empreendimentos</a>
+            <a href="#contato" class="hover:text-gold hover:opacity-100 transition">Contato</a>
+        </nav>
+        <div class="w-8 h-[1px] bg-white/40"></div> </header>
 
     <main>
-        <section class="min-h-screen flex items-center justify-center relative pt-20 overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=2000" class="absolute inset-0 w-full h-full object-cover vignette opacity-60 scale-105" id="hero-img">
+        <section id="home" class="h-screen relative flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=2500" 
+                     class="w-full h-full object-cover opacity-50 scale-110" id="hero-bg">
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-transparent to-black/40"></div>
             
-            <div class="z-10 text-center px-6">
-                <h2 class="hero-title text-7xl md:text-9xl font-serif leading-tight mb-8">
-                    <span>Sinfonia</span><br>em sua<br><span>essência</span>
+            <div class="z-10 text-center px-4 mt-20">
+                <h2 class="hero-title text-5xl md:text-[110px] font-serif leading-none font-light mb-4">
+                    Vida em <span class="italic text-gold">Sinfonia</span>
                 </h2>
-                <p class="tracking-[0.6em] uppercase text-xs opacity-60" id="hero-subtitle italic text-gold">A Soberania do Viver.</p>
+                <div class="w-20 h-[1px] bg-gold mx-auto mb-8 opacity-50"></div>
+                <p class="hero-subtitle text-[10px] uppercase tracking-[1.2em] opacity-40">Balneário Camboriú</p>
+            </div>
+
+            <div class="absolute bottom-12 left-1/2 -translate-x-1/2 opacity-20 text-[8px] uppercase tracking-[0.5em] animate-bounce">
+                Scroll para descobrir
             </div>
         </section>
-    </main>
 
-    <script>
-        gsap.registerPlugin();
-        let tl = gsap.timeline();
+        <section id="manifesto" class="py-40 px-8 max-w-6xl mx-auto flex flex-col items-center">
+            <span class="reveal text-gold text-[9px] uppercase tracking-[0.6em] mb-12 italic">Manifesto</span>
+            <h3 class="reveal text-3xl md:text-5xl font-serif font-light text-center leading-relaxed italic opacity-90">
+                "Onde a <span class="text-gold">Biofilia</span> abraça a <br class="hidden md:block"> arquitetura de luxo, criando <br class="hidden md:block"> santuários suspensos entre o <br class="hidden md:block"> mar e o céu."
+            </h3>
+            <div class="reveal w-px h-32 bg-white/10 mt-20"></div>
+        </section>
 
-        // Animação de entrada: mais suave impossível
-        tl.to("#hero-img", { duration: 2, scale: 1, ease: "power2.out" })
-          .to("#header", { duration: 1, opacity: 1, ease: "power1.inOut" }, "-=1.5")
-          .from(".hero-title span", { duration: 1.5, y: 100, opacity: 0, stagger: 0.3, ease: "expo.out" }, "-=1")
-          .from("#hero-subtitle", { duration: 1, opacity: 0, y: 30, ease: "power2.out" }, "-=0.5");
-    </script>
-</body>
-</html>
+        <section id="projetos" class="py-20 px-10">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-20 items-center">
+                
+                <div class="md:col-span-7 reveal relative group overflow-hidden">
+                    <p class="text-[8px] uppercase tracking-[0.5em] text-gold mb-6">Em Destaque</p>
+                    <div class="aspect-video overflow-hidden border border-white/5">
+                        <img src="
