@@ -4,5 +4,6 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: './',
+  // Ajuste o nome abaixo para o nome exato do seu repositório no GitHub
+  base: '/blue-heaven-landing/', 
 })
